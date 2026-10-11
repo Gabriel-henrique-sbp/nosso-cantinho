@@ -1,0 +1,178 @@
+
+/* Configuração geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 50px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+    color: #633747;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #fff5f7,
+        #f8d5e0
+    );
+
+    position: relative;
+}
+
+/* Corações decorativos no fundo */
+body::before {
+    content: "♥     ♡     ♥     ♡     ♥";
+    position: fixed;
+    top: 15px;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 12px;
+    color: rgba(190, 50, 90, 0.18);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Título */
+h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    color: #ad315b;
+    text-align: center;
+    margin-bottom: 30px;
+
+    text-shadow: 2px 2px 8px rgba(173, 49, 91, 0.15);
+}
+
+/* Cartão da história */
+.texto_historia {
+    width: 100%;
+    max-width: 850px;
+
+    padding: 40px;
+    margin-bottom: 30px;
+
+    background: rgba(255, 255, 255, 0.82);
+    border: 2px solid #f0bdce;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(150, 55, 85, 0.15);
+
+    position: relative;
+}
+
+/* Detalhe de coração no cartão */
+.texto_historia::before {
+    content: "♥";
+    display: block;
+
+    text-align: center;
+    font-size: 30px;
+    color: #d94f79;
+
+    margin-bottom: 20px;
+}
+
+/* Parágrafos */
+.texto_historia p {
+    font-size: 18px;
+    line-height: 1.9;
+    text-align: justify;
+
+    margin-bottom: 22px;
+    text-indent: 30px;
+}
+
+/* Primeiro parágrafo */
+.texto_historia p:first-child {
+    color: #b43d64;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    text-indent: 0;
+    margin-bottom: 30px;
+}
+
+/* Remove o espaço extra do último parágrafo */
+.texto_historia p:last-child {
+    margin-bottom: 0;
+}
+
+/* Botão de voltar */
+.botao_voltar {
+    padding: 13px 35px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        45deg,
+        #c9184a,
+        #ed7094
+    );
+
+    color: white;
+    font-size: 17px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(201, 24, 74, 0.25);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.botao_voltar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(201, 24, 74, 0.35);
+}
+
+/* Efeito ao clicar */
+.botao_voltar:active {
+    transform: scale(0.96);
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 35px 15px;
+    }
+
+    h1 {
+        margin-bottom: 22px;
+    }
+
+    .texto_historia {
+        padding: 25px 20px;
+    }
+
+    .texto_historia p {
+        font-size: 16px;
+        line-height: 1.8;
+        text-align: left;
+        text-indent: 20px;
+    }
+
+    .texto_historia p:first-child {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .botao_voltar {
+        width: 100%;
+        max-width: 250px;
+    }
+}
