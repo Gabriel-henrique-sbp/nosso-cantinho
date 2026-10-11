@@ -1,0 +1,257 @@
+
+/* Configuração geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(ellipse at top left, #ffe1eb 0%, transparent 45%),
+        radial-gradient(ellipse at bottom right, #e9c4df 0%, transparent 45%),
+        linear-gradient(135deg, #fff0f5, #f8d3e0, #f4c6d7);
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Corações decorativos */
+body::before {
+    content: "♡  ♥  ♡  ♥  ♡";
+    position: fixed;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    letter-spacing: 25px;
+    color: rgba(173, 49, 91, 0.2);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Título */
+h1 {
+    color: #ad315b;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 12px;
+    text-shadow: 2px 3px 10px rgba(173, 49, 91, 0.15);
+}
+
+/* Frase abaixo do título */
+h1::after {
+    content: "♥ Cada foto guarda um pedacinho da nossa história ♥";
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 15px;
+    color: #9d5270;
+}
+
+/* Área do carrossel */
+.container-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto 30px;
+}
+
+/* Lista dos cards */
+.card-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 950px;
+    padding: 25px 10px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+}
+
+/* Fotos dentro dos cards */
+.card {
+    padding: 8px;
+    overflow: hidden;
+}
+
+/* Imagem ocupando o card */
+.card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 15px;
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+/* Zoom delicado ao passar o mouse */
+.card:hover img {
+    transform: scale(1.06);
+}
+
+
+.card-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cada card */
+.card {
+    flex: 0 0 220px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ad315b;
+    font-size: 32px;
+    font-weight: bold;
+
+    background: rgba(255, 255, 255, 0.8);
+    border: 3px solid #fff;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 25px rgba(130, 54, 83, 0.18);
+
+    scroll-snap-align: center;
+    position: relative;
+    overflow: hidden;
+
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+/* Coração no interior dos cards */
+.card::before {
+    content: "♥";
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 23px;
+    color: #e78ca9;
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(130, 54, 83, 0.28);
+}
+
+/* Botões de navegação */
+.botao-esquerdo,
+.botao-direito {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+
+    border: 2px solid white;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #d94f79, #b52d5b);
+    color: white;
+
+    font-size: 27px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(173, 49, 91, 0.25);
+    transition: transform 0.25s, background 0.25s;
+}
+
+.botao-esquerdo:hover,
+.botao-direito:hover {
+    transform: scale(1.1);
+    background: #a5224d;
+}
+
+.botao-esquerdo:active,
+.botao-direito:active {
+    transform: scale(0.94);
+}
+
+
+
+/* Celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 30px 10px;
+    }
+
+    h1::after {
+        max-width: 300px;
+        margin: 12px auto 0;
+        line-height: 1.6;
+    }
+
+    .container-list {
+        gap: 6px;
+        margin-top: 30px;
+    }
+
+    .card-list {
+        gap: 12px;
+        padding: 20px 5px;
+    }
+
+    .card {
+        flex-basis: 190px;
+        height: 260px;
+    }
+
+    .botao-esquerdo,
+    .botao-direito {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+}
+
+/* Frase no final da página */
+body::after {
+    content: "Juntos é sempre melhor. ♡";
+    display: block;
+    margin: 15px auto;
+    color: #a8325b;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.botao-voltar {
+    padding: 13px 35px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        45deg,
+        #c9184a,
+        #ed7094
+    );
+
+    color: white;
+    font-size: 17px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(201, 24, 74, 0.25);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}

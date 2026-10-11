@@ -1,0 +1,134 @@
+
+/* Configuração geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4ec,
+        #fff0f5,
+        #f8c8dc
+    );
+
+    overflow: hidden;
+}
+
+/* Coração decorativo no fundo */
+body::before {
+    content: "♥  ♡  ♥  ♡  ♥";
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 35px;
+    color: rgba(190, 60, 100, 0.15);
+    pointer-events: none;
+}
+
+/* Caixa principal */
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid #f3b6c9;
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(150, 50, 80, 0.18);
+}
+
+/* Título */
+h1 {
+    color: #a8325b;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+/* Mensagem romântica */
+.mensagem {
+    color: #7d4055;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Botões */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 15px auto;
+
+    border: none;
+    border-radius: 30px;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: bold;
+
+    color: white;
+    cursor: pointer;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Botão da história */
+.botao_historia {
+    background: linear-gradient(45deg, #c9184a, #ff4d79);
+    box-shadow: 0 5px 15px rgba(201, 24, 74, 0.25);
+}
+
+/* Botão das fotos */
+.botao_fotos {
+    background: linear-gradient(45deg, #ad5389, #d66ba0);
+    box-shadow: 0 5px 15px rgba(173, 83, 137, 0.25);
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(150, 50, 80, 0.3);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Rodapé */
+.rodape {
+    color: #a8325b;
+    font-size: 14px;
+    margin-top: 25px;
+    font-style: italic;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 480px) {
+    .container {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .mensagem {
+        font-size: 15px;
+    }
+}
